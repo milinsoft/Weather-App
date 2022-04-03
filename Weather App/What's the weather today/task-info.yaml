@@ -181,9 +181,60 @@ files:
 - name: web/static/404.css
   visible: true
   learner_created: true
+- name: web/static/style.css
+  visible: true
+  learner_created: true
+- name: web/templates/index.html
+  visible: true
+  learner_created: true
+- name: web/static/city.list.txt
+  visible: true
+  learner_created: true
 - name: web/static/city.list.json
   visible: true
   learner_created: true
 feedback_link: https://hyperskill.org/projects/164/stages/853/implement#comment
 status: Failed
+feedback:
+  message: |-
+    Error in test #1
+
+    Cannot start Flask server web/app.py because cannot find "(Press CTRL+C to quit)" in process' output
+
+    stderr:
+    Traceback (most recent call last):
+      File "/Users/aleksander/PycharmProjects/Weather App/Weather App/task/web/app.py", line 3, in <module>
+        from flask import Flask, render_template, request
+      File "/Users/aleksander/PycharmProjects/Weather App/.idea/VirtualEnvironment/lib/python3.9/site-packages/flask/__init__.py", line 14, in <module>
+        from jinja2 import escape
+      File "/Users/aleksander/PycharmProjects/Weather App/.idea/VirtualEnvironment/lib/python3.9/site-packages/jinja2/__init__.py", line 12, in <module>
+        from .environment import Environment
+      File "/Users/aleksander/PycharmProjects/Weather App/.idea/VirtualEnvironment/lib/python3.9/site-packages/jinja2/environment.py", line 25, in <module>
+        from .defaults import BLOCK_END_STRING
+      File "/Users/aleksander/PycharmProjects/Weather App/.idea/VirtualEnvironment/lib/python3.9/site-packages/jinja2/defaults.py", line 3, in <module>
+        from .filters import FILTERS as DEFAULT_FILTERS  # noqa: F401
+      File "/Users/aleksander/PycharmProjects/Weather App/.idea/VirtualEnvironment/lib/python3.9/site-packages/jinja2/filters.py", line 13, in <module>
+        from markupsafe import soft_unicode
+    ImportError: cannot import name 'soft_unicode' from 'markupsafe' (/Users/aleksander/PycharmProjects/Weather App/.idea/VirtualEnvironment/lib/python3.9/site-packages/markupsafe/__init__.py)
+
+    Please find below the output of your program during this failed test.
+
+    ---
+
+    stderr:
+    Traceback (most recent call last):
+      File "Weather App/task/web/app.py", line 3, in <module>
+        from flask import Flask, render_template, request
+      File ".idea/VirtualEnvironment/lib/python3.9/site-packages/flask/__init__.py", line 14, in <module>
+        from jinja2 import escape
+      File ".idea/VirtualEnvironment/lib/python3.9/site-packages/jinja2/__init__.py", line 12, in <module>
+        from .environment import Environment
+      File ".idea/VirtualEnvironment/lib/python3.9/site-packages/jinja2/environment.py", line 25, in <module>
+        from .defaults import BLOCK_END_STRING
+      File ".idea/VirtualEnvironment/lib/python3.9/site-packages/jinja2/defaults.py", line 3, in <module>
+        from .filters import FILTERS as DEFAULT_FILTERS  # noqa: F401
+      File ".idea/VirtualEnvironment/lib/python3.9/site-packages/jinja2/filters.py", line 13, in <module>
+        from markupsafe import soft_unicode
+    ImportError: cannot import name 'soft_unicode' from 'markupsafe' (/Users/aleksander/PycharmProjects/Weather App/.idea/VirtualEnvironment/lib/python3.9/site-packages/markupsafe/__init__.py)
+  time: Sun, 03 Apr 2022 12:19:19 UTC
 record: 2
