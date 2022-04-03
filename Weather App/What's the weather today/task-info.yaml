@@ -197,44 +197,66 @@ feedback_link: https://hyperskill.org/projects/164/stages/853/implement#comment
 status: Failed
 feedback:
   message: |-
-    Error in test #1
+    Unexpected error in test #3
 
-    Cannot start Flask server web/app.py because cannot find "(Press CTRL+C to quit)" in process' output
+    We have recorded this bug and will fix it soon.
 
-    stderr:
+    Submitted via IDE
+
+    OS Darwin 21.4.0
+    CPython 3.9.6
+    Testing library version 8
+
     Traceback (most recent call last):
-      File "/Users/aleksander/PycharmProjects/Weather App/Weather App/task/web/app.py", line 3, in <module>
-        from flask import Flask, render_template, request
-      File "/Users/aleksander/PycharmProjects/Weather App/.idea/VirtualEnvironment/lib/python3.9/site-packages/flask/__init__.py", line 14, in <module>
-        from jinja2 import escape
-      File "/Users/aleksander/PycharmProjects/Weather App/.idea/VirtualEnvironment/lib/python3.9/site-packages/jinja2/__init__.py", line 12, in <module>
-        from .environment import Environment
-      File "/Users/aleksander/PycharmProjects/Weather App/.idea/VirtualEnvironment/lib/python3.9/site-packages/jinja2/environment.py", line 25, in <module>
-        from .defaults import BLOCK_END_STRING
-      File "/Users/aleksander/PycharmProjects/Weather App/.idea/VirtualEnvironment/lib/python3.9/site-packages/jinja2/defaults.py", line 3, in <module>
-        from .filters import FILTERS as DEFAULT_FILTERS  # noqa: F401
-      File "/Users/aleksander/PycharmProjects/Weather App/.idea/VirtualEnvironment/lib/python3.9/site-packages/jinja2/filters.py", line 13, in <module>
-        from markupsafe import soft_unicode
-    ImportError: cannot import name 'soft_unicode' from 'markupsafe' (/Users/aleksander/PycharmProjects/Weather App/.idea/VirtualEnvironment/lib/python3.9/site-packages/markupsafe/__init__.py)
+      File "/Users/aleksander/PycharmProjects/Weather App/.idea/VirtualEnvironment/lib/python3.9/site-packages/hstest/stage/stage_test.py", line 132, in run_tests
+        result: CheckResult = test_run.test()
+      File "/Users/aleksander/PycharmProjects/Weather App/.idea/VirtualEnvironment/lib/python3.9/site-packages/hstest/testing/test_run.py", line 101, in test
+        self._check_errors()
+      File "/Users/aleksander/PycharmProjects/Weather App/.idea/VirtualEnvironment/lib/python3.9/site-packages/hstest/testing/test_run.py", line 137, in _check_errors
+        raise error_in_test
+      File "/Users/aleksander/PycharmProjects/Weather App/.idea/VirtualEnvironment/lib/python3.9/site-packages/hstest/testing/runner/flask_application_runner.py", line 111, in test
+        result = test_case.dynamic_testing()
+      File "/Users/aleksander/PycharmProjects/Weather App/.idea/VirtualEnvironment/lib/python3.9/site-packages/hstest/dynamic/input/dynamic_testing.py", line 81, in <lambda>
+        tests += [lambda o=obj, a=args: self.test(o, *a)]
+      File "/Users/aleksander/PycharmProjects/Weather App/.idea/VirtualEnvironment/lib/python3.9/site-packages/hstest/dynamic/dynamic_test.py", line 38, in <lambda>
+        test=lambda *a, **k: self.fn(*a, **k),
+      File "/Users/aleksander/PycharmProjects/Weather App/Weather App/task/tests.py", line 130, in test_add_city
+        asyncio.get_event_loop().run_until_complete(self.test_add_city_async())
+      File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/asyncio/base_events.py", line 642, in run_until_complete
+        return future.result()
+      File "/Users/aleksander/PycharmProjects/Weather App/Weather App/task/tests.py", line 109, in test_add_city_async
+        await page.goto(self.get_url())
+      File "/Users/aleksander/PycharmProjects/Weather App/.idea/VirtualEnvironment/lib/python3.9/site-packages/pyppeteer/page.py", line 885, in goto
+        raise error
+    pyppeteer.errors.TimeoutError: Navigation Timeout Exceeded: 30000 ms exceeded.
 
     Please find below the output of your program during this failed test.
 
     ---
 
+    stdout:
+    * Serving Flask app 'app' (lazy loading)
+     * Environment: production
+       WARNING: This is a development server. Do not use it in a production deployment.
+       Use a production WSGI server instead.
+     * Debug mode: on
+
     stderr:
-    Traceback (most recent call last):
-      File "Weather App/task/web/app.py", line 3, in <module>
-        from flask import Flask, render_template, request
-      File ".idea/VirtualEnvironment/lib/python3.9/site-packages/flask/__init__.py", line 14, in <module>
-        from jinja2 import escape
-      File ".idea/VirtualEnvironment/lib/python3.9/site-packages/jinja2/__init__.py", line 12, in <module>
-        from .environment import Environment
-      File ".idea/VirtualEnvironment/lib/python3.9/site-packages/jinja2/environment.py", line 25, in <module>
-        from .defaults import BLOCK_END_STRING
-      File ".idea/VirtualEnvironment/lib/python3.9/site-packages/jinja2/defaults.py", line 3, in <module>
-        from .filters import FILTERS as DEFAULT_FILTERS  # noqa: F401
-      File ".idea/VirtualEnvironment/lib/python3.9/site-packages/jinja2/filters.py", line 13, in <module>
-        from markupsafe import soft_unicode
-    ImportError: cannot import name 'soft_unicode' from 'markupsafe' (/Users/aleksander/PycharmProjects/Weather App/.idea/VirtualEnvironment/lib/python3.9/site-packages/markupsafe/__init__.py)
-  time: Sun, 03 Apr 2022 12:19:19 UTC
+    * Running on http://localhost:8000 (Press CTRL+C to quit)
+     * Restarting with stat
+     * Debugger is active!
+     * Debugger PIN: 808-083-756
+    127.0.0.1 - - [03/Apr/2022 14:21:12] "GET / HTTP/1.1" 200 -
+    127.0.0.1 - - [03/Apr/2022 14:21:12] "GET /static/style.css HTTP/1.1" 200 -
+    127.0.0.1 - - [03/Apr/2022 14:21:12] "GET /static/img/evening-morning.jpg HTTP/1.1" 200 -
+    127.0.0.1 - - [03/Apr/2022 14:21:12] "GET /static/img/day.jpg HTTP/1.1" 200 -
+    127.0.0.1 - - [03/Apr/2022 14:21:12] "GET /static/img/night.jpg HTTP/1.1" 200 -
+    127.0.0.1 - - [03/Apr/2022 14:21:16] "GET / HTTP/1.1" 200 -
+    127.0.0.1 - - [03/Apr/2022 14:21:16] "GET /static/style.css HTTP/1.1" 200 -
+    127.0.0.1 - - [03/Apr/2022 14:21:16] "GET /static/img/evening-morning.jpg HTTP/1.1" 200 -
+    127.0.0.1 - - [03/Apr/2022 14:21:16] "GET /static/img/day.jpg HTTP/1.1" 200 -
+    127.0.0.1 - - [03/Apr/2022 14:21:16] "GET /static/img/night.jpg HTTP/1.1" 200 -
+    127.0.0.1 - - [03/Apr/2022 14:21:20] "GET / HTTP/1.1" 200 -
+    127.0.0.1 - - [03/Apr/2022 14:21:20] "GET /static/style.css HTTP/1.1" 200 -
+  time: Sun, 03 Apr 2022 12:21:51 UTC
 record: 2
