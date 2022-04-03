@@ -138,6 +138,18 @@ files:
     if __name__ == '__main__':
         FlaskProjectTest().run_tests()
   learner_created: false
-feedback_link: https://hyperskill.org/projects/164/stages/852/implement#comment
-status: Solved
+feedback_link: https://hyperskill.org/learn/step/12326#comment
+status: Failed
+feedback:
+  message: |-
+    Error in test #1
+
+    Error running "web/app.py"
+
+     * Running on http://localhost:8000 (Press CTRL+C to quit)
+     * Restarting with stat
+     * Debugger is active!
+     * Debugger PIN: 808-083-756
+    127.0.0.1 - - [03/Apr/2022 14:29:37] "
+  time: Sun, 03 Apr 2022 12:29:39 UTC
 record: 1

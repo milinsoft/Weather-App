@@ -71,6 +71,6 @@ files:
         else:
             app.run()
   learner_created: false
-feedback_link: https://hyperskill.org/projects/164/stages/851/implement#comment
+feedback_link: https://hyperskill.org/learn/step/12325#comment
 status: Failed
 record: 3
