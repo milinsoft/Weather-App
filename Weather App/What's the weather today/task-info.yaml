@@ -175,27 +175,24 @@ files:
     if __name__ == '__main__':
         FlaskProjectTest().run_tests()
   learner_created: false
-- name: web/templates/404.html
-  visible: true
-  learner_created: true
-- name: web/static/404.css
-  visible: true
-  learner_created: true
 - name: web/templates/index.html
   visible: true
   learner_created: true
 - name: web/static/style.css
   visible: true
   learner_created: true
-- name: web/static/city_list.json
+- name: web/static/404.css
   visible: true
   learner_created: true
-- name: web/templates/tp.html
+- name: web/static/img/funny-404-error.jpg
+  visible: true
+  learner_created: true
+- name: web/templates/404.html
   visible: true
   learner_created: true
 feedback_link: https://hyperskill.org/learn/step/12327#comment
 status: Solved
 feedback:
   message: Congratulations!
-  time: Sun, 03 Apr 2022 15:27:37 UTC
+  time: Sun, 03 Apr 2022 19:39:50 UTC
 record: 2

@@ -1,0 +1,14 @@
+body, html {
+    height: 100%;
+
+     background-image: url("img/funny-404-error.jpg");
+
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+}
+
+h2 {
+<!-- style for h2 -->
+
+}
