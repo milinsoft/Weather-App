@@ -1,10 +1,10 @@
-<h5>Description</h5>
+<h5 id="description">Description</h5>
 
 <p>It is neither practical nor interesting when the server responds with plain text only. It is much better when the server sends an HTML template with a nice design.</p>
 
 <p>Returning an HTML template in Flask is easy. You can use the <code class="language-html">render_template</code> method. It takes the name of the template. Once it gets the name of the template, the <code class="language-html">render_template</code> method searches for the template in the <code class="language-html">templates</code> folder and returns it. This folder must be at the same level as the Python file with the Flask class object.</p>
 
-<h5>Theory</h5>
+<h5 id="theory">Theory</h5>
 
 <p>This is a sample of a Flask project structure:</p>
 
@@ -33,7 +33,7 @@ def index():
 
 <p>You can create any other folder to store HTML files in the <code class="language-html">templates</code> folder. However, you should specify the path to the exact file in the <code class="language-html">render_template</code> method. For example: <code class="language-html">render_template('folder_name/template_name.html')</code></p>
 
-<h5>Objectives</h5>
+<h5 id="objectives">Objectives</h5>
 
 <p>In this stage, your web application should handle requests to the <code class="language-html">'/'</code> URL and return the HTML template<strong> </strong>file as a response. You can download an archive with the predefined <code class="language-html">template</code> and <code class="language-html">static</code> folders from <a target="_blank" href="https://stepik.org/media/attachments/lesson/494358/web.zip" rel="noopener noreferrer nofollow">here</a>. Put them with your <code class="language-html">app.py</code> file.</p>
 

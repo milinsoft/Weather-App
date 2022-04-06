@@ -159,7 +159,7 @@ files:
         @dynamic_test(order=1, time_limit=-1)
         def test_response(self):
             ExitHandler.revert_exit()
-            asyncio.get_event_loop().run_until_complete(self.test_response_async())
+            asyncio.new_event_loop().run_until_complete(self.test_response_async())
             return CheckResult.correct()
 
         async def test_main_page_structure_async(self):
@@ -191,7 +191,7 @@ files:
 
         @dynamic_test(order=2)
         def test_main_page_structure(self):
-            asyncio.get_event_loop().run_until_complete(self.test_main_page_structure_async())
+            asyncio.new_event_loop().run_until_complete(self.test_main_page_structure_async())
             return CheckResult.correct()
 
         async def test_add_city_async(self):
@@ -218,7 +218,7 @@ files:
 
         @dynamic_test(order=3)
         def test_add_city(self):
-            asyncio.get_event_loop().run_until_complete(self.test_add_city_async())
+            asyncio.new_event_loop().run_until_complete(self.test_add_city_async())
             return CheckResult.correct()
 
         async def test_city_name_after_adding_async(self):
@@ -246,7 +246,7 @@ files:
 
         @dynamic_test(order=4)
         def test_city_name_after_adding(self):
-            asyncio.get_event_loop().run_until_complete(self.test_city_name_after_adding_async())
+            asyncio.new_event_loop().run_until_complete(self.test_city_name_after_adding_async())
             return CheckResult.correct()
 
         async def test_refresh_async(self):
@@ -277,7 +277,7 @@ files:
 
         @dynamic_test(order=5)
         def test_refresh(self):
-            asyncio.get_event_loop().run_until_complete(self.test_refresh_async())
+            asyncio.new_event_loop().run_until_complete(self.test_refresh_async())
             return CheckResult.correct()
 
 
