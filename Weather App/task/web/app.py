@@ -46,8 +46,10 @@ def add_to_database(city_name, database=WeatherInCity):
     if not city_name:
         pass
     city = database(name=city_name)
-    db.session.add(city)
-    db.session.commit()
+    already_in_database = database.query.filter(database.name == city_name).first()
+    if not already_in_database:
+        db.session.add(city)
+        db.session.commit()
 
 
 def get_weather_from_api(city_name) -> dict:
