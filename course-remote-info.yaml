@@ -3,7 +3,7 @@ hyperskill_project:
   ide_files: https://stepik.org/media/attachments/lesson/494358/additional_files.json
   is_template_based: false
   use_ide: true
-update_date: Fri, 08 Apr 2022 16:11:10 UTC
+update_date: Tue, 12 Apr 2022 21:57:44 UTC
 stages:
 - id: 851
   step: 12325
@@ -19,7 +19,7 @@ stages:
   is_completed: true
 - id: 855
   step: 12329
-  is_completed: false
+  is_completed: true
 topics:
   0:
   - title: World Wide Web

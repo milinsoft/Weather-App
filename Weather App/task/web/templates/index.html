@@ -34,8 +34,8 @@
     {% for city in cities %}
     <div class="card {{ city.day_part }}">
         <div class="delete-wrapper">
-            <form action="#" method="POST">
-                <input type="hidden" name="id" value="">
+            <!-- actions is just a route to proper function and method + method -->
+            <form action="/delete/{{ city.id }}" method="POST">
                 <button class="delete-button" type="submit">&#10006;</button>
             </form>
         </div>
