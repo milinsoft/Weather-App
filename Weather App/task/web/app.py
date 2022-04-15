@@ -38,11 +38,13 @@ def page_not_found(e):
 def get_part_of_the_day(time_stamp: datetime) -> str:
     hour = time_stamp.hour
     parts_of_the_day = ((5, 12, 'morning'), (12, 17, 'afternoon'),
-                        (17, 21, 'evening'), (21, 4, 'night'),
+                        (17, 21, 'evening'),
                         )
     for day_part in parts_of_the_day:
-        if any((day_part[0] <= hour, hour < day_part[1])):
+        if day_part[0] <= hour < day_part[1]:
             return day_part[2]
+        else:
+            return 'night'
 
 
 def add_to_database(city_name, database=WeatherInCity):

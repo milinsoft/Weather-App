@@ -175,7 +175,7 @@ files:
     if __name__ == '__main__':
         FlaskProjectTest().run_tests()
   learner_created: false
-- name: web/templates/OLDindex.html
+- name: web/templates/index.html
   visible: true
   learner_created: true
 - name: web/static/style.css
