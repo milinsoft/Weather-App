@@ -9,19 +9,21 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 
 API_KEY = 'a2eec5522c1c2c34cdf69f49e448083b'
-user_agent = {'User-agent': 'Mozilla/5.0'}
 DB_NAME = 'weather'
 SECRET_KEY = urandom(30)  # generating the secret key with length 30
 
 
 app.config.update(
-    {'SQLALCHEMY_TRACK_MODIFICATIONS': False,
-     'SQLALCHEMY_DATABASE_URI': f'sqlite:///{DB_NAME}.db',
-     'SECRET_KEY': SECRET_KEY,
-     }
+    {
+        'SQLALCHEMY_TRACK_MODIFICATIONS': False,
+        'SQLALCHEMY_DATABASE_URI': f'sqlite:///{DB_NAME}.db',
+        'SECRET_KEY': SECRET_KEY,
+    }
 )
 
 db = SQLAlchemy(app)
+app.app_context().push()
+db.create_all()
 
 
 class WeatherInCity(db.Model):
@@ -37,20 +39,18 @@ def page_not_found(e):
 
 def get_part_of_the_day(time_stamp: datetime) -> str:
     hour = time_stamp.hour
-    parts_of_the_day = ((5, 12, 'morning'), (12, 17, 'afternoon'),
-                        (17, 21, 'evening'),
-                        )
+    parts_of_the_day = ((5, 12, 'morning'), (12, 17, 'afternoon'), (17, 21, 'evening'))
     for day_part in parts_of_the_day:
         if day_part[0] <= hour < day_part[1]:
             return day_part[2]
-        else:
-            return 'night'
+
+    return 'night'
 
 
 def add_to_database(city_name, database=WeatherInCity):
     def city_exists():
-        web_site = f'http://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={API_KEY}'
-        r = requests.get(web_site, headers=user_agent)
+        web_site = f'https://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={API_KEY}'
+        r = requests.get(web_site)
         return r.status_code == 200
 
     if not city_name:
@@ -74,10 +74,11 @@ def get_weather_from_api(city_name, city_id) -> dict:
         return int(round(kelvin_value - 273.15))
 
     def get_local_time(timezone: str) -> datetime:
-        return datetime.utcnow() + timedelta(seconds=int(timezone))
+        local_time = datetime.utcnow() + timedelta(seconds=int(timezone))
+        return local_time
 
-    web_site = f'http://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={API_KEY}'
-    r = requests.get(web_site, headers=user_agent)
+    web_site = f'https://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={API_KEY}'
+    r = requests.get(web_site)
     if r.status_code == 200:
         json_data = r.json()
         dict_with_weather_info = {
