@@ -1,3 +1,13 @@
 # Default ignored files
 /shelf/
 /workspace.xml
+/.python-version
+/.idea/.gitignore
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/inspectionProfiles/profiles_settings.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/frameworkLessonHistory/storage.storageData
+/.idea/frameworkLessonHistory/storage.storageRecordIndex
+/.idea/vcs.xml
+/.idea/Weather-App.iml
